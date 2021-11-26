@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des acteurs{% endblock %}
+
+{% block body %}
+
+
+<img style="width:100px" src="{{ asset('images/' ~ film.affiche)}}">
+      <h1> {{film.Titre}} </h1>
+      
+     <p>  {{film.description}} </p>
+
+     
+    
+{% endblock %}

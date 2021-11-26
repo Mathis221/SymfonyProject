@@ -1,0 +1,31 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}acteurs{% endblock %}
+
+{% block body %}
+
+{% for a in actors %}
+
+      
+        <img style="width:100px" src="{{ asset('images/' ~ a.image)}}">
+        <td> <a href="{{ path ('afficheactor', {'id': a.id}) }}">{{a.nom}}</a></td>
+        <td>{{ a.prenom }}</td>
+        <td>
+         <a href="{{ path ('modifactor', {'id': a.id}) }}">
+         modifier</a>
+        </td>
+
+        <td>
+          
+        
+    {% endfor %}
+
+
+    <br>
+
+     <a href="{{ path ('creationactor') }}">
+          creer un nouvel acteur </a>
+
+{% endblock %}

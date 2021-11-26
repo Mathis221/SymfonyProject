@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}new acteurs{% endblock %}
+
+{% block body %}
+
+<img style="width:100px" src="{{ asset('images/' ~ film.affiche)}}">
+
+      <h1> {{film.Titre}} </h1>
+      
+     <h2> {{film.description}} </h2>
+      {{ form_start(form) }}
+         {{ form_widget(form) }}
+         <input type="submit" value="enregistrer" >
+       {{form_end(form)}} 
+    
+{% endblock %}

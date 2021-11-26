@@ -1,0 +1,21 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}director{% endblock %}
+
+{% block body %}
+
+{% for director in directors %}
+
+      
+
+        <td> <a href="{{ path ('afficheactor', {'id': director.id}) }}">{{director.nom}}</a></td>
+        <td>{{ director.prenom }}</td>
+       
+        <td>
+          
+        
+    {% endfor %}
+
+
+{% endblock %}

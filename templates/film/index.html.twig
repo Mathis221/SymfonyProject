@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acteurs{% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head> 
+<body> 
+    {% block stylesheets %}
+        <link href="{{ asset('css/film.css') }}" type="text/css" rel="stylesheet" />
+        
+      {% endblock %}
+
+
+{% for film in films %}
+<div class="films">
+      <img style="width:100px" src="{{ asset('images/' ~ film.affiche)}}"> 
+
+      <a href="{{ path ('modiffilm', {'id': film.id}) }}">
+         Modifier le film</a> 
+
+      <h1>  <td><td> <a href="{{ path ('affichefilm', {'id': film.id}) }}">{{film.titre}}</a></td> </h1> <br>
+
+        <td>{{ film.Description}}</td> <br>
+
+        </div>
+
+            
+       
+        <td> Acteurs :
+        {% for actor in film.actors %}
+<div class="acteurs">
+        <img style="width:30px" src="{{ asset('images/' ~ actor.image)}}">
+
+       <td> <a href="{{ path ('afficheactor', {'id': actor.id}) }}">{{actor.nom}} {{ actor.prenom}}</a></td> <br>
+
+        </td>
+</div>
+          {% endfor %}
+       
+    {% endfor %}
+ 
+    <a href="{{ path ('creationfilm') }}">
+          creer un nouveau film </a>
+
+</head>
+
+</body>
+
+</html>
+{% endblock %}      
+
